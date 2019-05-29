@@ -1,0 +1,40 @@
+#### 1. :before 伪元素
+
+:before 伪元素可以在元素的内容前面插入新内容
+
+```
+h1:before {
+  content: url(logo.gif);
+}
+```
+
+#### 2. :after 伪元素
+
+:after 伪元素可以在元素的内容之后插入新内容
+
+```
+h1:after {
+  content: url(logo.gif);
+}
+```
+
+#### 3. :first-line 伪元素
+
+:first-line 伪元素向文本的首行添加特殊样式
+
+```
+p:first-line {
+  color: #f00;
+}
+```
+
+
+#### 4. :first-letter 伪元素
+
+向文本的第一个字母添加特殊样式。	
+
+```
+p:first-letter {
+  font-size: 30px;
+}
+```
