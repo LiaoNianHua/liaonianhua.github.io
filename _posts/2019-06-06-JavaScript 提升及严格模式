@@ -1,0 +1,104 @@
+## 提升（Hoisting）是 JavaScript 将声明移至顶部的默认行为
+
+```
+在 JavaScript 中，可以在使用变量之后对其进行声明。
+换句话说，可以在声明变量之前使用它
+严格模式中的 JavaScript 不允许在未被声明的情况下使用变量
+
+
+x = 5 => 把 5 赋值给 x
+document.getElementById('demo').innerHTML = x
+var x => 声明 x
+
+=> 在x声明之前就使用了它, 达到了变量提升, var x声明之后值还是等于5
+```
+
+
+## 严格模式
+
+```
+JavaScript 严格模式（strict mode）即在严格的条件下运行,  
+以下版本的浏览器支持严格模式: 
+IE10及以上, Firefox4及以上, Chorme13及以上, Safari5.1及以上, Opera12及以上
+通过脚本或函数的开头使用"use strict"来声明严格模式
+```
+
+#### 1. 全局的严格模式
+
+```
+"use strict"
+function fn () {
+  x = 7 // 严格模式下, 此处报错, x尚未声明
+}
+```
+
+#### 2. 局部的严格模式
+
+```
+x = 7 // 此处不会报错
+function fn () {
+  "use strict"
+  y = 7 // 严格模式下, 此处报错, y尚未声明
+}
+```
+
+#### 3. 严格模式中不允许的事项
+
+##### (1) 在不声明变量的情况下使用变量，是不允许的
+
+```
+"use strict"
+x = 5 
+```
+
+##### (2) 在不声明对象的情况下使用对象也是不允许的
+
+```
+"use strict"
+obj = {p1:10, p2:20}
+```
+
+##### (3) 删除变量（或对象）是不允许的
+
+```
+"use strict"
+var x = 3.14
+delete x
+```
+
+##### (4) 删除函数是不允许的
+
+```
+"use strict"
+function fn () {}
+delete fn
+```
+
+##### (5) 重复参数名是不允许的
+
+```
+"use strict"
+function fn (p1, p1) {}
+```
+
+##### (6) 转义字符是不允许的
+
+```
+"use strict"
+var x = \090
+```
+
+##### (7) 字符串 "eval"、"arguments"  不可用作变量
+
+```
+"use strict"
+var evel = 'abc'
+```
+
+#### 4. 为什么使用严格模式
+
+
+```
+严格模式使我们更容易编写“安全的” JavaScript
+严格模式把之前可接受的“坏语法”转变为真实的错误
+```
