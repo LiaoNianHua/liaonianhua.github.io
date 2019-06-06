@@ -1,0 +1,32 @@
+## JavaScript 调试器
+
+```
+查找编程代码中的错误被称为代码调试
+```
+
+#### 1. console.log() 方法
+
+```
+如果您的浏览器支持调试，那么您可以使用 console.log()   
+在调试窗口中显示 JavaScript 的值
+```
+
+#### 2. 设置断点
+
+```
+在调试窗口中，您可在 JavaScript 代码中设置断点
+在每个断点中，JavaScript 将停止执行，以使您能够检查 JavaScript 的值
+在检查值之后，您可以恢复代码执行
+```
+
+#### 3. debugger关键词
+
+
+```
+debugger 关键词会停止 JavaScript 的执行，并调用（如果有）调试函数  
+这与在调试器中设置断点的功能是一样的
+
+var x = 15 * 5;
+debugger;
+document.getElementbyId("demo").innerHTML = x
+```
