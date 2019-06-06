@@ -1,0 +1,56 @@
+## this 关键词指的是它所属的对象
+
+#### 1. 在方法中, this指向所有者对象
+
+```
+在对象方法中，this 指的是此方法的"拥有者", this 指的是 person 对象
+
+var person = {
+  firstName: 'Bill',
+  lastName: 'Gates',
+  fullName: function () {
+    return this.firstName + this.lastName
+  }
+}
+```
+
+#### 2. 单独的情况下，this 指的是全局对象
+
+```
+在单独使用时，拥有者是全局对象，因此 this 指的是全局对象,  
+在浏览器窗口中，全局对象是 [object Window]
+
+var x = this
+```
+
+#### 3. 在函数中，this 指的是全局对象
+
+```
+在 JavaScript 函数中，函数的拥有者默认绑定 this。
+因此，在函数中，this 指的是全局对象 [object Window]
+
+function fn () { 
+  return this
+}
+```
+
+
+#### 4. 在函数中，严格模式下，this 是 undefined
+
+```
+"use strict"
+function fn () {
+  return this
+}
+```
+
+#### 5. 在事件中，this 指的是接收事件的元素
+
+```
+在 HTML 事件处理程序中，this 指的是接收此事件的 HTML 元素
+
+<button onclick="this.style.display='none'">
+  点击来删除我！
+</button>
+```
+
